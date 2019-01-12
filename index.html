@@ -82,7 +82,7 @@ window.app = new Vue({
     },
     methods: {
       itemsTraidosDeBlogger (ctx) { //U: trae los items de blogger y los formatea para b-table
-        let promise = axios.get('https://cors-anywhere.herokuapp.com/https://pizarra.podemosaprender.org/feeds/posts/default?alt=json') //A: de blogger como json
+        let promise = axios.get('https://cors-anywhere.herokuapp.com/https://latetrabrik.blogspot.com/feeds/posts/default?alt=json') //A: de blogger como json
         return promise.then((data) => {
           //DBG: 
           window.XDATA= data; // return([]); //U: Asi hice disponible el resultado en la consola para debuggear
