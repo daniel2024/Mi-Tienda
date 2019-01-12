@@ -82,8 +82,13 @@ window.app = new Vue({
     },
     methods: {
       itemsTraidosDeBlogger (ctx) { //U: trae los items de blogger y los formatea para b-table
-        let promise = axios.get('https://cors-anywhere.herokuapp.com/https://latetrabrik.blogspot.com/feeds/posts/default?alt=json') //A: de blogger como json
-        return promise.then((data) => {
+       elarray = [];
+       
+          let promise = axios.get('https://cors-anywhere.herokuapp.com/https://latetrabrik.blogspot.com/feeds/posts/default?alt=json') //A: de blogger como json
+         let promise2 = axios.get('https://cors-anywhere.herokuapp.com/https://remeras10061997.blogspot.com/feeds/posts/default?alt=json')
+            elarray = elarray.push(promise);
+          elarray = elarray.push(promise2);
+         return elarray[0].then((data) => {
           //DBG: 
           window.XDATA= data; // return([]); //U: Asi hice disponible el resultado en la consola para debuggear
           let a_kv_para_tabla= data.data.feed.entry.map(entry_kv_blogger);
